@@ -1,37 +1,18 @@
 #include "main.h"
-#include <stdio.h>
 /**
- * cap_string - capitalizes most of the words in a string.
- * @s: analized string.
- *
- * Return: String with all words capitalized.
+ * print_chessboard - Entry point
+ * @a: array
+ * Return: Always 0 (Success)
  */
-char *cap_string(char *s)
+void print_chessboard(char (*a)[8])
 {
-	int i, j;
-	int a[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+	int i;
+	int j;
 
-	i = 0;
-	while (*(s + i) != '\0')
+	for (i = 0; i < 8; i++)
 	{
-		if (*(s + i) >= 'a' && *(s + i) <= 'z')
-		{
-			if (i == 0)
-			{
-				*(s + i) = *(s + i) - 32;
-			}
-			else
-			{
-				for (j = 0; j <= 12; j++)
-				{
-					if (a[j] == *(s + i - 1))
-					{
-						*(s + i) = *(s + i) - 32;
-					}
-				}
-			}
-		}
-	i++;
+		for (j = 0; j < 8; j++)
+			_putchar(a[i][j]);
+		_putchar('\n');
 	}
-	return (s);
 }
